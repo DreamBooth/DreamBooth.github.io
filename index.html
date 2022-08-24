@@ -16,7 +16,6 @@
   </span></p>
   <br>
   <img src="./DreamBooth_files/teaser_light.gif" class="teaser-gif"><br>
-<br>
   <h3 style="text-align:center"><em>It’s like a photo booth, but once the subject is captured, it can be synthesized wherever your dreams take you…</em></h3>
 </div>
 <div class="content">
@@ -26,6 +25,12 @@
     Once the subject is embedded in the output domain of the model, the unique identifier can be used to synthesize fully-novel photorealistic images of the subject contextualized in different scenes. 
     By leveraging the semantic prior embedded in the model with a new autogenous class-specific prior preservation loss, our technique enables us to synthesize the subject in diverse contexts, poses, views and lighting conditions that do not appear in the reference images but are adapted from objects belong to the same class and already exist in the output domain of the model. 
     We apply our technique to various applications including re-contextualization, original artistic rendition generation, appearance modification, accessorizing, and many other previously unassailable tasks. </p>
+</div>
+<div class="content">
+  <h2>Background</h2>
+  <p> Given a particular subject such as clock (shown in the real images on the left), it is very challenging to generate it in different contexts with state-of-the-art text-to-image models, while maintaining high fidelity to its key visual features. Even with dozens of iterations over a text prompt that contains a detailed description of the appearance of the clock (<em>"retro style yellow alarm clock with a white clock face and a yellow number three on the right part of the clock face in the jungle"</em>), the Imagen model [Saharia et al., 2022] can't reconstruct its key visual features (third column). Furthermore, even models whose text embedding lies in a shared language-vision space and can create semantic variations of the image, such as DALL-E2 [Ramesh et al., 2022], can neither reconstruct the appearance of the given subject nor modify the context (second column). In contrast, our approach (right) can synthesize the clock with high fidelity and in new contexts (<em>"a [V] clock in the jungle"</em>).</p>
+  <br>
+  <img class="summary-img" src="./DreamBooth_files/background.png" style="width:100%;"> <br>
 </div>
 <div class="content">
   <h2>Approach</h2>
@@ -47,6 +52,12 @@
   <img class="summary-img" src="./DreamBooth_files/art.png" style="width:100%;"> <br>
 </div>
 <div class="content">
+  <h2>Text-Guided View Synthesis</h2>
+  <p>Our technique can synthesized images with specified viewpoints for a subject cat (left to right: top, bottom, side and back views). Note that the generated poses are  different from the input poses, and the background changes in a realistic manner given a pose change. We also highlight the preservation of complex fur patterns on the subject cat's forehead.</p>
+  <br>
+  <img class="summary-img" src="./DreamBooth_files/novel_views.png" style="width:100%;"> <br>
+</div>
+<div class="content">
   <h2>BibTex</h2>
   <code> @article{ruiz2022dreambooth,<br>
   &nbsp;&nbsp;title={DreamBooth: Fine Tuning Text-to-image Dissusion Models for Subject-Driven Generation},<br>
@@ -56,7 +67,7 @@
   } </code> </div>
 <div class="content" id="acknowledgements">
   <p><strong>Acknowledgements</strong>:
-    We thank Rinon Gal, Adi Zicher, Tali Dekel, Bill Freeman, Dilip Krishnan and Daniel Cohen-Or for their valuable inputs that helped improve this work, and to Mohammad Norouzi, Chitwan Saharia and William Chan for providing us with their support and the pretrained models of Imagen. 
+    We thank Rinon Gal, Adi Zicher, Ron Mokady, Bill Freeman, Dilip Krishnan and Daniel Cohen-Or for their valuable inputs that helped improve this work, and to Mohammad Norouzi, Chitwan Saharia and William Chan for providing us with their support and the pretrained models of Imagen. 
     <!-- Recycling a familiar <a href="https://chail.github.io/latent-composition/">template</a> ;). --> 
   </p>
 </div>
