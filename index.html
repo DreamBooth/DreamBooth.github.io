@@ -20,11 +20,7 @@
 </div>
 <div class="content">
   <h2 style="text-align:center;">Abstract</h2>
-  <p>Large text-to-image models achieved a remarkable leap in the evolution of AI, by enabling high-quality and diverse synthesis of images from a given text prompt. However, these models missing tools that allow users telling their own story, based on specific subjects as they lack the ability to mimic the appearance of subjects in a given reference set and synthesize novel renditions of them in different contexts. 
-    In this work, we present a new approach for personalization of text-to-image diffusion models. Given a few images of a subject, we fine tune a pretrained text-to-image model such that it learns to bind a unique identifier with that specific subject. 
-    Once the subject is embedded in the output domain of the model, the unique identifier can be used to synthesize fully-novel photorealistic images of the subject contextualized in different scenes. 
-    By leveraging the semantic prior embedded in the model with a new autogenous class-specific prior preservation loss, our technique enables us to synthesize the subject in diverse contexts, poses, views and lighting conditions that do not appear in the reference images but are adapted from objects belong to the same class and already exist in the output domain of the model. 
-    We apply our technique to various applications including re-contextualization, original artistic rendition generation, appearance modification, accessorizing, and many other previously unassailable tasks. </p>
+  <p>Large text-to-image models achieved a remarkable leap in the evolution of AI, enabling high-quality and diverse synthesis of images from a given text prompt. However, these models lack the ability to mimic the appearance of subjects in a given reference set and synthesize novel renditions of them in different contexts. In this work, we present a new approach for ``personalization'' of text-to-image diffusion models (specializing them to users' needs). Given as input just a few images of a subject, we fine-tune a pretrained text-to-image model (Imagen, although our method is not limited to a specific model) such that it learns to bind a unique identifier with that specific subject. Once the subject is embedded in the output domain of the model, the unique identifier can then be used to synthesize fully-novel photorealistic images of the subject contextualized in different scenes. By leveraging the semantic prior embedded in the model with a new autogenous class-specific prior preservation loss, our technique enables synthesizing the subject in diverse scenes, poses, views, and lighting conditions that do not appear in the reference images. We apply our technique to several previously-unassailable tasks, including subject recontextualization, text-guided view synthesis, appearance modification, and artistic rendering (all while preserving the subject's key features).</p>
 </div>
 <div class="content">
   <h2>Background</h2>
@@ -46,12 +42,12 @@
   <p>Results for re-contextualization of a bag and vase subject instances. By finetuning a model using our method we are able to generate different images of the a subject instance in different environments, with high preservation of subject details and realistic interaction between the scene and the subject. We display the conditioning prompts below each image. </p>
 <img class="summary-img" src="./DreamBooth_files/results.png" style="width:100%;">
 </div>
-<!-- <div class="content">
-  <h2>Original Art Rendition</h2>
+<div class="content">
+  <h2>Art Rendition</h2>
   <p>Original artistic renditions of our subject dog in the style of famous painters. We remark that many of the generated poses were not seen in the training set, such as the Van Gogh and Warhol rendition. We also note that some renditions seem to have novel composition and faithfully imitate the style of the painter - even suggesting some sort of creativity (extrapolation given previous knowledge).</p>
   <br>
   <img class="summary-img" src="./DreamBooth_files/art.png" style="width:100%;"> <br>
-</div> -->
+</div>
 <div class="content">
   <h2>Text-Guided View Synthesis</h2>
   <p>Our technique can synthesized images with specified viewpoints for a subject cat (left to right: top, bottom, side and back views). Note that the generated poses are  different from the input poses, and the background changes in a realistic manner given a pose change. We also highlight the preservation of complex fur patterns on the subject cat's forehead.</p>
@@ -71,13 +67,19 @@
   <img class="summary-img" src="./DreamBooth_files/accessories.png" style="width:100%;"> <br>
 </div>
 <div class="content">
+  <h2>Societal Impact</h2>
+  <p>This project aims to provide users with an effective tool for synthesizing personal subjects (animals, objects) in different contexts. While general text-to-image models might be biased towards specific attributes when synthesizing images from text, our approach enables the user to get a better reconstruction of their desirable subjects. On contrary, malicious parties might try to use such images to mislead viewers. This is a common issue, existing in other generative models approaches or content manipulation techniques. Future research in generative modeling, and specifically of personalized generative priors, must continue investigating and revalidating these concerns.</p>
+  <br>
+</div>
+<div class="content">
   <h2>BibTex</h2>
   <code> @article{ruiz2022dreambooth,<br>
   &nbsp;&nbsp;title={DreamBooth: Fine Tuning Text-to-image Dissusion Models for Subject-Driven Generation},<br>
   &nbsp;&nbsp;author={Ruiz, Nataniel and Li, Yuanzhen and Jampani, Varun and Pritch, Yael and Rubinstein, Michael and Aberman, Kfir},<br>
   &nbsp;&nbsp;booktitle={arXiv preprint},<br>
   &nbsp;&nbsp;year={2022}<br>
-  } </code> </div>
+  } </code> 
+</div>
 <div class="content" id="acknowledgements">
   <p><strong>Acknowledgements</strong>:
     We thank Rinon Gal, Adi Zicher, Ron Mokady, Bill Freeman, Dilip Krishnan, Huiwen Chang and Daniel Cohen-Or for their valuable inputs that helped improve this work, and to Mohammad Norouzi, Chitwan Saharia and William Chan for providing us with their support and the pretrained models of Imagen. 
